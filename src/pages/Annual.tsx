@@ -4,7 +4,7 @@ import { Common } from "../style/Commonstyle";
 const AnnualReport: React.FC = () => {
   return (
     <Common>
-      <h1>Annual Report</h1>
+      <h1>연혁</h1>
     </Common>
   );
 };

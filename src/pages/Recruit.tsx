@@ -4,7 +4,7 @@ import { Common } from "../style/Commonstyle";
 const Teams: React.FC = () => {
   return (
     <Common>
-      <h1>Welcome to GeeksforGeeks Team</h1>
+      <h1>채용</h1>
     </Common>
   );
 };

@@ -16,11 +16,10 @@ const SignIn: React.FC = () => {
       setAlertShown(true);
     }
   }, [loginData.id, isAlertShown]);
-
+  // loginData에 데이터 존재할 시 메인페이지 이동
   if (loginData.id) {
     return <Navigate to="/" />;
   }
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const id = (e.currentTarget.elements.namedItem("id") as HTMLInputElement)
@@ -38,6 +37,7 @@ const SignIn: React.FC = () => {
     }
     updateLoginData(id, password);
   };
+
   return (
     // <Common>
     //   <h1>로그인</h1>
@@ -46,16 +46,6 @@ const SignIn: React.FC = () => {
     // </Common>
     <div className="test">
       <div className="container" id="container">
-        <div className="form-container sign-up-container">
-          <form action="#">
-            <h1>Create Account</h1>
-            <span>or use your email for registration</span>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>Sign Up</button>
-          </form>
-        </div>
         <div className="form-container sign-in-container">
           <form onSubmit={handleSubmit}>
             <h1>Sign in</h1>
@@ -71,9 +61,11 @@ const SignIn: React.FC = () => {
             <div className="overlay-panel overlay-right">
               <h1>Hello, Friend!</h1>
               <p> Enter your personal details and start the journey with us</p>
-              <button className="ghost" id="signUp">
-                Sign Up
-              </button>
+              <Link to="/sign-up">
+                <button className="ghost" id="signUp">
+                  Sign Up
+                </button>
+              </Link>
             </div>
           </div>
         </div>

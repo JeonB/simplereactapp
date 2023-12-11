@@ -4,7 +4,7 @@ import { Common } from "../style/Commonstyle";
 const Home: React.FC = () => {
   return (
     <Common>
-      <h1>반갑습니다~</h1>
+      <h1>환영합니다~</h1>
     </Common>
   );
 };
