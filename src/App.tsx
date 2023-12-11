@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import * as Pages from "./pages";
+import Navbar from "./navbar/Navbar";
+import { AuthContextProvider } from "./form/AuthContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AuthContextProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Pages.Home />} />
+          <Route path="/about" element={<Pages.About />} />
+          <Route path="/events" element={<Pages.Events />} />
+          <Route path="/annual" element={<Pages.AnnualReport />} />
+          <Route path="/team" element={<Pages.Teams />} />
+          <Route path="/blogs" element={<Pages.Blogs />} />
+          <Route path="/sign-up" element={<Pages.SignUp />} />
+          <Route path="/sign-in" element={<Pages.SignIn />} />
+        </Routes>
+      </AuthContextProvider>
+    </Router>
   );
 }
 
