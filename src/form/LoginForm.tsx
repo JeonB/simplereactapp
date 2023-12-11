@@ -1,8 +1,9 @@
 import React from "react";
 import { useAuth } from "./AuthContext";
+import { Navigate } from "react-router-dom";
 
 const LoginForm: React.FC = () => {
-  const { updateUserData } = useAuth();
+  const { updateLoginData, userData } = useAuth();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -12,7 +13,14 @@ const LoginForm: React.FC = () => {
       e.currentTarget.elements.namedItem("password") as HTMLInputElement
     )?.value;
 
-    updateUserData(id, password);
+    if (userData.id !== id || userData.password !== password) {
+      alert("ID나 비밀번호가 일치하지 않습니다.");
+      return <Navigate to="/sign-in" />;
+    } else if (id === "" || password === "") {
+      alert("ID나 비밀번호를 입력해주세요.");
+      return <Navigate to="/sign-in" />;
+    }
+    updateLoginData(id, password);
   };
 
   return (

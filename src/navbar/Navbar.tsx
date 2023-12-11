@@ -7,13 +7,30 @@ import {
   NavBtn,
   NavBtnLink,
 } from "../style/NavbarElements";
+import { useAuth } from "../form/AuthContext";
 
 const Navbar: React.FC = () => {
+  const { loginData, clearLoginData } = useAuth();
+
+  const handleSignOut = () => {
+    clearLoginData();
+    alert("로그아웃");
+  };
+  var isSignInOut = "";
+  var link = "";
+
+  if (loginData.id) {
+    isSignInOut = "sign-out";
+    link = "/sign-in";
+  } else {
+    isSignInOut = "sign-in";
+    link = "/sign-in";
+  }
+
   return (
     <>
       <Nav>
         <Bars />
-
         <NavMenu>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About</NavLink>
@@ -22,11 +39,15 @@ const Navbar: React.FC = () => {
           <NavLink to="/team">Teams</NavLink>
           <NavLink to="/blogs">Blogs</NavLink>
           <NavLink to="/sign-up">Sign Up</NavLink>
-          {/* Second Nav */}
-          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
         <NavBtn>
-          <NavBtnLink to="/sign-in">Sign In</NavBtnLink>
+          {loginData.id ? (
+            <NavBtnLink to={link} onClick={handleSignOut}>
+              {isSignInOut}
+            </NavBtnLink>
+          ) : (
+            <NavBtnLink to={link}>{isSignInOut}</NavBtnLink>
+          )}
         </NavBtn>
       </Nav>
     </>
