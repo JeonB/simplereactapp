@@ -15,7 +15,7 @@ function App() {
           <Route path="/about" element={<Pages.About />} />
           <Route path="/events" element={<Pages.Events />} />
           <Route path="/annual" element={<Pages.AnnualReport />} />
-          <Route path="/team" element={<Pages.Teams />} />
+          <Route path="/recruit" element={<Pages.Recruit />} />
           <Route path="/blogs" element={<Pages.Blogs />} />
           <Route path="/sign-up" element={<Pages.SignUp />} />
           <Route path="/sign-in" element={<Pages.SignIn />} />

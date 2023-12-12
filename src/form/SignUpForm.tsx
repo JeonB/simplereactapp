@@ -18,6 +18,7 @@ const SignUpForm: React.FC = () => {
       e.currentTarget.elements.namedItem("phonenum") as HTMLInputElement
     )?.value;
     updateUserData(id, password, name, phonenum);
+    alert("회원가입 완료");
   };
 
   return (

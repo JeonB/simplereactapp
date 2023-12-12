@@ -10,7 +10,7 @@ const SignIn: React.FC = () => {
   const [isAlertShown, setAlertShown] = useState(false);
 
   useEffect(() => {
-    // userData.id가 변경되고 isAlertShown이 false일 때만 실행
+    // loginData.id가 변경되고 isAlertShown이 false일 때만 실행
     if (loginData.id && !isAlertShown) {
       alert("로그인 완료");
       setAlertShown(true);
@@ -20,6 +20,7 @@ const SignIn: React.FC = () => {
   if (loginData.id) {
     return <Navigate to="/" />;
   }
+  // 폼 submit 실행 후 로직
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const id = (e.currentTarget.elements.namedItem("id") as HTMLInputElement)
@@ -28,11 +29,18 @@ const SignIn: React.FC = () => {
       e.currentTarget.elements.namedItem("password") as HTMLInputElement
     )?.value;
 
-    if (userData.id !== id || userData.password !== password) {
+    if (
+      id !== "" &&
+      password !== "" &&
+      (userData.id !== id || userData.password !== password)
+    ) {
       alert("ID나 비밀번호가 일치하지 않습니다.");
       return <Navigate to="/sign-in" />;
-    } else if (id === "" || password === "") {
-      alert("ID나 비밀번호를 입력해주세요.");
+    } else if (id === "") {
+      alert("ID를 입력해주세요.");
+      return <Navigate to="/sign-in" />;
+    } else if (password === "") {
+      alert("비밀번호를 입력해주세요.");
       return <Navigate to="/sign-in" />;
     }
     updateLoginData(id, password);
