@@ -1,0 +1,134 @@
+{
+  "plans": [
+    {
+      "id": 1,
+      "name": "Eat food",
+      "content": "eat diet food"
+    },
+    {
+      "id": 2,
+      "name": "Decrease weight",
+      "content": "exercise"
+    },
+    {
+      "id": 3,
+      "name": "Learn programming",
+      "content": "code every day"
+    },
+    {
+      "id": 4,
+      "name": "Read a book",
+      "content": "explore new genres"
+    },
+    {
+      "id": 5,
+      "name": "Travel",
+      "content": "visit new places"
+    },
+    {
+      "id": 6,
+      "name": "Practice mindfulness",
+      "content": "meditate for 10 minutes daily"
+    },
+    {
+      "id": 7,
+      "name": "Learn a new language",
+      "content": "practice vocabulary and grammar"
+    },
+    {
+      "id": 8,
+      "name": "Start a blog",
+      "content": "share thoughts and experiences"
+    },
+    {
+      "id": 9,
+      "name": "Exercise regularly",
+      "content": "maintain a fitness routine"
+    },
+    {
+      "id": 10,
+      "name": "Cook a new recipe",
+      "content": "experiment with flavors"
+    },
+    {
+      "id": 11,
+      "name": "Paint or draw",
+      "content": "express creativity on canvas"
+    },
+    {
+      "id": 12,
+      "name": "Learn a musical instrument",
+      "content": "practice playing music"
+    },
+    {
+      "id": 13,
+      "name": "Take online courses",
+      "content": "expand knowledge and skills"
+    },
+    {
+      "id": 14,
+      "name": "Gardening",
+      "content": "grow plants and flowers"
+    },
+    {
+      "id": 15,
+      "name": "Volunteer",
+      "content": "contribute to the community"
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "content": "HTML",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "content": "CSS",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "content": "Javascript",
+      "completed": true
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Lee",
+      "role": "developer"
+    },
+    {
+      "id": 2,
+      "name": "Kim",
+      "role": "designer"
+    }
+  ],
+  "companies": [
+    {
+      "id": 1,
+      "name": "ABC Corp",
+      "industry": "Technology"
+    },
+    {
+      "id": 2,
+      "name": "XYZ Inc",
+      "industry": "Finance"
+    }
+  ],
+  "computers": [
+    {
+      "id": 1,
+      "brand": "Apple",
+      "model": "MacBook Pro",
+      "year": 2022
+    },
+    {
+      "id": 2,
+      "brand": "Dell",
+      "model": "Inspiron",
+      "year": 2021
+    }
+  ]
+}
